@@ -110,13 +110,13 @@ function Cadastrar() {
 
                                 <div className="fields">
                                     <div className="field endereco">
-                                        <input type="text" endereco="endereco" placeholder="Digite o endereço do ponto turístico" onChange={onChangeInput} value={dataForm.endereco} />
+                                        <input type="text" name="endereco" placeholder="Digite o endereço do ponto turístico" onChange={onChangeInput} value={dataForm.endereco} />
                                     </div>
                                 </div>  
 
                                 <div className="fields">
                                     <div className="field imagem">
-                                        <input type="text" imagem="imagem" placeholder="Insira uma imagem." onChange={onChangeInput} value={dataForm.imagem} />
+                                        <input type="file" name="imagem" placeholder="Insira uma imagem." onChange={onChangeInput} value={dataForm.imagem} />
                                     </div>
                                 </div>                               
 

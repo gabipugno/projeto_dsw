@@ -2,9 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
+const Cadastrar = require('./models/Cadastrar');
+const cadastrar = require('./models/Cadastrar');
 const Home = require('./models/Home');
 const MsgContact = require('./models/MsgContact');
-const Cadastrar = require('./models/Cadastrar');
 const User = require('./models/User');
 
 app.use(express.json());
@@ -17,10 +18,11 @@ app.use((req, res, next) => {
     next();
 });
 
+
 app.get('/', async(req, res) => {
 
-    await Cadastrar.findOne({
-        attributes: ['name', 'email', 'ponto','endereco', 'imagem']
+    await Home.findOne({
+        attributes: ['text_one', 'text_two', 'text_three','btn_title', 'btn_link']
     })
         .then((datahome) => {
             return res.json({
@@ -39,22 +41,21 @@ app.get('/', async(req, res) => {
 app.get('/cadastrar', async(req, res) => {
 
     await Cadastrar.findOne({
-        attributes: ['name', 'email', 'email','ponto', 'endereco', 'imagem']
+        attributes: ['name', 'email', 'ponto','endereco', 'imagem']
     })
-        .then((dataForm) => {
+        .then((datahome) => {
             return res.json({
                 erro: false,
-                dataForm
+                datahome
             });
         }).catch(() => {
             return res.status(400).json({
                 erro: true,
-                mensagem: "Erro: Nenhum valor encontrado para a página home!"
+                mensagem: "Erro: Nenhum valor encontrado para a página pontos!"
             });
         });
 
 });
-
 
 app.post('/add-home', async (req, res) => {
 
@@ -139,6 +140,19 @@ app.post("/user", async (req, res) => {
     
 });
 
+app.delete("/cadastrar/:id", (req, res) => {
+    const cadastrar = Cadastrar.deleteOne({id: req.cadastrar.id}, (err) => {
+        if(err) return res.status(400).json({
+            error: true,
+            message: "Error: ponto não foi apagado com sucesso!"
+        });
+
+        return res.json({
+            error: false,
+            message: "Ponto apagado com sucesso!"
+        });
+    });
+});
 
 
 app.listen(8080, () => {

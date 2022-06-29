@@ -40,4 +40,6 @@ Cadastrar.sync();
 //Primeiro apaga a TB, em seguida cria TB
 //Cadastrar.sync({ force: true })
 
+
+
 module.exports = Cadastrar;

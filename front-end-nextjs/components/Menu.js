@@ -16,6 +16,8 @@ const Menu = () => (
                     <li><a href="/user" className="menu-btn">Usuário</a></li>
                     <li><a href="/cadastrar" className="menu-btn">Cadastrar</a></li>
                     <li><a href="/contato" className="menu-btn">Contato</a></li> 
+                    <li><a href="/pontos" className="menu-btn">Pontos</a></li> 
+
                 </ul>
                 <div className="menu-btn">
                     <i className="fas fa-bars"></i>

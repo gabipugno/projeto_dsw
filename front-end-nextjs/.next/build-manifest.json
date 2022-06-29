@@ -14,11 +14,6 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
-    "/": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/index.js"
-    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -29,10 +24,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/user": [
+    "/cadastrar": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/user.js"
+      "static/chunks/pages/cadastrar.js"
+    ],
+    "/pontos": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/pontos.js"
     ]
   },
   "ampFirstPages": []
