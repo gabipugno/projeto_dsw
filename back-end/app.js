@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-
 const Cadastrar = require('./models/Cadastrar');
 const cadastrar = require('./models/Cadastrar');
 const Home = require('./models/Home');
@@ -141,7 +140,9 @@ app.post("/user", async (req, res) => {
 });
 
 app.delete("/cadastrar/:id", (req, res) => {
-    const cadastrar = Cadastrar.deleteOne({id: req.cadastrar.id}, (err) => {
+  
+     Cadastrar.deleteOne({id: req.cadastrar.id}, (err) => {
+        console.log(req.cadastrar.id);
         if(err) return res.status(400).json({
             error: true,
             message: "Error: ponto não foi apagado com sucesso!"
@@ -153,6 +154,8 @@ app.delete("/cadastrar/:id", (req, res) => {
         });
     });
 });
+
+
 
 
 app.listen(8080, () => {

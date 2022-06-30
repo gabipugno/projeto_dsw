@@ -1,11 +1,9 @@
 import Head from 'next/head';
 import Menu from '../components/Menu';
-import axios from 'axios';
+
 
 function Pontos({ data }) {
-    function deletePost(id) {
-        axios.delete(`http://localhost:8080/cadastrar/${id}`)
-    }
+
     return (
         <div>
             <Head>
@@ -20,14 +18,10 @@ function Pontos({ data }) {
             <Menu />
 
             <section className="top2">
+            <form>
                 <div className="max-width">
                     <div className="top-content">
-                        <div className="text-1">
-                            {data.datahome.name}
-                        </div>
-                        <div className="text-2">
-                            {data.datahome.email}
-                        </div>
+                        
                         <div className="text-3">
                             {data.datahome.ponto}
                         </div>
@@ -37,11 +31,18 @@ function Pontos({ data }) {
                         <div className="media">
                             {data.datahome.imagem}
                         </div>
+                        <div className="text-1">
+                            {data.datahome.name}
+                        </div>
+                        <div className="text-2">
+                            {data.datahome.email}
+                        </div>
                         <div className="button-area">
-                            <button onClick = {() => deletePost(data.datahome.id)}> delete </button>
+                        <button onClick={(data) => this.deleteRow(data.datahome.id)}>Deletar linha</button>
                         </div>
                     </div>
                 </div>
+                </form>  
             </section>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
             <script src="custom.js"></script>

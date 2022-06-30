@@ -41,5 +41,4 @@ Cadastrar.sync();
 //Cadastrar.sync({ force: true })
 
 
-
 module.exports = Cadastrar;

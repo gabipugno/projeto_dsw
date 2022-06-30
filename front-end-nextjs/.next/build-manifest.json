@@ -24,10 +24,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/cadastrar": [
+    "/contato": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/cadastrar.js"
+      "static/chunks/pages/contato.js"
     ],
     "/pontos": [
       "static/chunks/webpack.js",
